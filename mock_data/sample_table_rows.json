@@ -1,0 +1,14 @@
+﻿[
+  {
+    "columns": { "offer": { "id": 101, "name": "Offer A" }, "affiliate": { "id": 11, "name": "Aff One" }, "advertiser": { "id": 5, "name": "Adv One" } },
+    "metrics": { "revenue": 1234.5, "payout": 800.0, "cv": 100, "total_click": 2000 }
+  },
+  {
+    "columns": { "offer": { "id": 102, "name": "Offer B" }, "affiliate": { "id": 12, "name": "Aff Two" }, "advertiser": { "id": 6, "name": "Adv Two" } },
+    "metrics": { "revenue": 900.0, "payout": 400.0, "cv": 80, "total_click": 1500 }
+  },
+  {
+    "columns": { "offer": { "id": 103, "name": "Offer C" }, "affiliate": { "id": 11, "name": "Aff One" }, "advertiser": { "id": 7, "name": "Adv Three" } },
+    "metrics": { "revenue": 600.0, "payout": 450.0, "cv": 40, "total_click": 800 }
+  }
+]

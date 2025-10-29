@@ -1,0 +1,11 @@
+﻿# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Local
+.env
+out/
