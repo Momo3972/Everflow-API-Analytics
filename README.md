@@ -1,22 +1,22 @@
-# 🚀 Everflow API Analytics
+# Everflow API Analytics
 
 Un projet Python complet pour **analyser et visualiser les performances marketing** via l’**API Everflow**.  
 Ce projet illustre la création d’un mini-pipeline analytique : de l’extraction des données à la visualisation graphique et au reporting automatique.
 
 ---
 
-## 🧠 Objectif du projet
+## Objectif du projet
 
 L’objectif est de fournir un outil simple et automatisé permettant de :
-1. **Se connecter à l’API Everflow** à l’aide d’une clé d’API sécurisée.  
-2. **Extraire des statistiques agrégées** (revenus, payouts, conversions, clics) sur une **plage de dates donnée**.  
-3. **Calculer les profits** directement côté client (`profit = revenue − payout`).  
-4. **Générer des graphiques** (profits par offre, affilié, annonceur).  
-5. **Exporter les résultats** sous forme d’images PNG et d’un rapport Markdown réutilisable.  
+1. **Se connecter à l’API Everflow** à l’aide d’une clé d’API sécurisée 
+2. **Extraire des statistiques agrégées** (revenus, payouts, conversions, clics) sur une **plage de dates donnée**
+3. **Calculer les profits** directement côté client (`profit = revenue − payout`)  
+4. **Générer des graphiques** (profits par offre, affilié, annonceur)  
+5. **Exporter les résultats** sous forme d’images PNG et d’un rapport Markdown réutilisable
 
 ---
 
-## 🧩 Structure du projet
+## Structure du projet
 
 ```
 Everflow-API-Analytics/
@@ -41,7 +41,7 @@ Everflow-API-Analytics/
 
 ---
 
-## ⚙️ Installation
+## Installation
 
 ### 1️⃣ Cloner le dépôt
 ```bash
@@ -72,23 +72,19 @@ EFLOW_TIMEZONE_ID=67
 EFLOW_CURRENCY_ID=USD
 ```
 
-> ⚠️ Ne publie jamais ton fichier `.env` sur GitHub.
+## Utilisation
 
----
-
-## ▶️ Utilisation
-
-### ✅ Mode mock (sans API, pour test)
+### Mode mock (sans API, pour test)
 ```bash
 python src/main.py --from 2025-03-15 --to 2025-03-31 --out out/ --mock
 ```
 
-### 🌐 Mode API réel
+### Mode API réel
 ```bash
 python src/main.py --from 2025-03-15 --to 2025-03-31 --out out/
 ```
 
-### 🔧 Options disponibles
+### Options disponibles
 | Option | Description |
 |--------|-------------|
 | `--from` | Date de début (format YYYY-MM-DD) |
@@ -99,7 +95,7 @@ python src/main.py --from 2025-03-15 --to 2025-03-31 --out out/
 
 ---
 
-## 📊 Exemple de résultats
+## Exemple de résultats
 
 Les fichiers suivants sont générés dans le dossier `out/` :
 
@@ -114,20 +110,20 @@ Aperçu du graphique principal :
 
 ---
 
-## 🧮 Fonctionnement technique
+## Fonctionnement technique
 
-### 🔐 Authentification
+### Authentification
 Chaque requête API Everflow utilise un en-tête :
 ```
 X-Eflow-API-Key: <votre_cle_api>
 ```
 
-### 📤 Endpoint utilisé
+### Endpoint utilisé
 ```http
 POST /v1/networks/reporting/entity/table
 ```
 
-### 📦 Exemple de payload
+### Exemple de payload
 ```json
 {
   "from": "2025-03-15",
@@ -138,7 +134,7 @@ POST /v1/networks/reporting/entity/table
 }
 ```
 
-### 🧠 Calculs et visualisations
+### Calculs et visualisations
 - Calcul du profit : `profit = revenue - payout`
 - Agrégation avec **pandas**
 - Graphiques horizontaux via **matplotlib**
@@ -146,33 +142,33 @@ POST /v1/networks/reporting/entity/table
 
 ---
 
-## ⚠️ Limites connues
+## Limites connues
 
 1. **Fenêtre temporelle maximale : 1 an**  
-   → Découper les périodes longues en plusieurs appels.
+   - Découper les périodes longues en plusieurs appels
 
 2. **Résultats limités à 10 000 lignes**  
-   → Si `incomplete_results = true`, réduire la plage ou ajouter des filtres.
+   - Si `incomplete_results = true`, réduire la plage ou ajouter des filtres
 
 3. **Filtres manquants (à venir)**  
-   → Ajout prévu : `country`, `device`, `source`, etc.
+   - Ajout prévu : `country`, `device`, `source`, etc
 
 4. **Visualisation statique uniquement**  
-   → Amélioration possible : dashboard interactif avec **Streamlit** ou **Plotly Dash**.
+   - Amélioration possible : dashboard interactif avec **Streamlit** ou **Plotly Dash**
 
 ---
 
-## 🚀 Pistes d’amélioration
+## Pistes d’amélioration
 
-- ✅ Ajout de filtres dynamiques (pays, device, etc.)
-- 📈 Tableau de bord web (Plotly / Streamlit)
-- 🔁 Génération automatique quotidienne (cron ou GitHub Actions)
-- ☁️ Exportation vers Google Sheets / Power BI / Tableau
-- ⚡ Cache local (SQLite ou Redis) pour améliorer les performances
+- Ajout de filtres dynamiques (pays, device, etc.)
+- Tableau de bord web (Plotly / Streamlit)
+- Génération automatique quotidienne (cron ou GitHub Actions)
+- Exportation vers Google Sheets / Power BI / Tableau
+- Cache local (SQLite ou Redis) pour améliorer les performances
 
 ---
 
-## 🧩 Technologies utilisées
+## Technologies utilisées
 
 | Domaine | Outils |
 |----------|--------|
@@ -184,19 +180,19 @@ POST /v1/networks/reporting/entity/table
 
 ---
 
-## 🧑‍💻 Auteur
+## Auteur
 
 **Mohamed Lamine OULD BOUYA**
 Développeur Data & API Integration  
-📫 [GitHub Profile](https://github.com/Momo3972)  
+[GitHub Profile](https://github.com/Momo3972)  
 
 ---
 
-## 📄 Licence
+## Licence
 
 Ce projet est distribué sous licence **MIT**.  
 Vous pouvez le réutiliser librement à des fins éducatives ou professionnelles.
 
 ---
 
-> 💬 *Projet créé dans le cadre d’un portfolio pour démontrer la capacité à intégrer une API REST analytique, à traiter des données en Python et à générer des visualisations exploitables.*
+> *Projet créé dans le cadre d’un portfolio pour démontrer ma capacité à intégrer une API REST analytique, à traiter des données en Python et à générer des visualisations exploitables.*
